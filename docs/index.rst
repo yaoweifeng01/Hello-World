@@ -1,5 +1,5 @@
 Welcome to demo's API Documentation
-======================================
+===================================
 
 .. toctree::
    :maxdepth: 2
@@ -11,8 +11,7 @@ This is the introduction of demo。
 
 API
 ===
-.. automodule:: run
-   :members:
+:doc:`Python API members </run>`
 
 Indices and tables
 ==================
