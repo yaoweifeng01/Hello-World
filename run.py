@@ -6,6 +6,7 @@ def run1(name):
     :param name name of people who runs
     """
     print(name)
+    print name, " python27"
  
 def run2(name):
     """
