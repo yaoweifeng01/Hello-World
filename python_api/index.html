@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Python api - Helloworld Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python api";
+    var mkdocs_page_input_path = "python_api.md";
+    var mkdocs_page_url = "/python_api/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Helloworld Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Apollo Cyber RT</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CyberRT_API_for_Developers/">Cyber RT API for Developers</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CyberRT_Developer_Tools/">Apollo Cyber RT Developer Tools</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CyberRT_FAQs/">Apollo Cyber RT FAQs</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CyberRT_Migration_Guide/">Migration guide from Apollo ROS</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CyberRT_Quick_Start/">How to create and run a new component in Apollo Cyber RT</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CyberRT_Quick_Start_cn/">如何使用Cyber RT来创建一个新的组件</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../CyberRT_Terms/">Apollo Cyber RT Terminologies</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../README/">Apollo Cyber RT</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../carla_index/">Carla index</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Python api</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#carlaclient">carla.Client</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaworld">carla.World</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaworldsettings">carla.WorldSettings</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carladebughelper">carla.DebugHelper</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlablueprintlibrary">carla.BlueprintLibrary</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaactorblueprint">carla.ActorBlueprint</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaactorattribute">carla.ActorAttribute</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaactorlist">carla.ActorList</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaactor">carla.Actor</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlavehiclecarlaactor">carla.Vehicle(carla.Actor)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlatrafficlightcarlaactor">carla.TrafficLight(carla.Actor)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlasensorcarlaactor">carla.Sensor(carla.Actor)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlasensordata">carla.SensorData</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaimagecarlasensordata">carla.Image(carla.SensorData)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalidarmeasurementcarlasensordata">carla.LidarMeasurement(carla.SensorData)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlacollisioneventcarlasensordata">carla.CollisionEvent(carla.SensorData)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalaneinvasioneventcarlasensordata">carla.LaneInvasionEvent(carla.SensorData)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlagnsseventcarlasensordata">carla.GnssEvent(carla.SensorData)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaobstacledetectionsensoreventcarlasensordata">carla.ObstacleDetectionSensorEvent(carla.SensorData)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlavehiclecontrol">carla.VehicleControl</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlawheelsphysicscontrol">carla.WheelsPhysicsControl</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlavehiclephysicscontrol">carla.VehiclePhysicsControl</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlamap">carla.Map</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalanetype">carla.LaneType</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalanechange">carla.LaneChange</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalanemarkingcolor">carla.LaneMarkingColor</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalanemarkingtype">carla.LaneMarkingType</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalanemarking">carla.LaneMarking</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlawaypoint">carla.Waypoint</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaweatherparameters">carla.WeatherParameters</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlavector2d">carla.Vector2D</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlavector3d">carla.Vector3D</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalocation">carla.Location</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlageolocation">carla.GeoLocation</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlarotation">carla.Rotation</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlatransform">carla.Transform</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaboundingbox">carla.BoundingBox</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlatimestamp">carla.Timestamp</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlacolor">carla.Color</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlacolorconverter">carla.ColorConverter</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlaactorattributetype">carla.ActorAttributeType</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlatrafficlightstate">carla.TrafficLightState</a></li>
+    
+
+    <li class="toctree-l2"><a href="#carlalanemarking_1">carla.LaneMarking</a></li>
+    
+
+    <li class="toctree-l2"><a href="#module-carlacommand">module carla.command</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#carlacommandresponse">carla.command.Response</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandspawnactor">carla.command.SpawnActor</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommanddestroyactor">carla.command.DestroyActor</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandapplyvehiclecontrol">carla.command.ApplyVehicleControl</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandapplywalkercontrol">carla.command.ApplyWalkerControl</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandapplytransform">carla.command.ApplyTransform</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandapplyvelocity">carla.command.ApplyVelocity</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandapplyangularvelocity">carla.command.ApplyAngularVelocity</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandapplyimpulse">carla.command.ApplyImpulse</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandsetsimulatephysics">carla.command.SetSimulatePhysics</a></li>
+        
+            <li><a class="toctree-l3" href="#carlacommandsetautopilot">carla.command.SetAutopilot</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cyber</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../cyber/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cyber/python_api/">Python api</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Helloworld Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Python api</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Python API Reference</h1>
+
+<p>!!! important
+    Versions prior to 0.9.0 have a very different API. For the documentation of
+    the stable version please switch to the
+    <a href="https://carla.readthedocs.io/en/stable/">stable branch</a>.</p>
+<h2 id="carlaclient"><code>carla.Client</code></h2>
+<ul>
+<li><code>Client(host, port, worker_threads=0)</code></li>
+<li><code>set_timeout(float_seconds)</code></li>
+<li><code>get_client_version()</code></li>
+<li><code>get_server_version()</code></li>
+<li><code>get_world()</code></li>
+<li><code>get_available_maps()</code></li>
+<li><code>reload_world()</code></li>
+<li><code>load_world(map_name)</code></li>
+<li><code>start_recorder(string filename)</code></li>
+<li><code>replay_file(string filename, float start, float duration, int camera_follow_id)</code></li>
+<li><code>show_recorder_file_info(string filename)</code></li>
+<li><code>show_recorder_collisions(string filename, char category1, char category2)</code></li>
+<li><code>show_recorder_actors_blocked(string filename, float min_time, float min_distance)</code></li>
+<li><code>apply_batch(commands, do_tick=False)</code></li>
+<li><code>apply_batch_sync(commands, do_tick=False) -&gt; list(carla.command.Response)</code></li>
+</ul>
+<h2 id="carlaworld"><code>carla.World</code></h2>
+<ul>
+<li><code>id</code></li>
+<li><code>debug</code></li>
+<li><code>get_blueprint_library()</code></li>
+<li><code>get_map()</code></li>
+<li><code>get_spectator()</code></li>
+<li><code>get_settings()</code></li>
+<li><code>apply_settings(world_settings)</code></li>
+<li><code>get_weather()</code></li>
+<li><code>set_weather(weather_parameters)</code></li>
+<li><code>get_actors(actor_ids=None) -&gt; carla.ActorList</code></li>
+<li><code>spawn_actor(blueprint, transform, attach_to=None)</code></li>
+<li><code>try_spawn_actor(blueprint, transform, attach_to=None)</code></li>
+<li><code>wait_for_tick(seconds=1.0)</code></li>
+<li><code>on_tick(callback)</code></li>
+<li><code>tick()</code></li>
+</ul>
+<h2 id="carlaworldsettings"><code>carla.WorldSettings</code></h2>
+<ul>
+<li><code>synchronous_mode</code></li>
+<li><code>no_rendering_mode</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carladebughelper"><code>carla.DebugHelper</code></h2>
+<ul>
+<li><code>draw_point(location, size=0.1, color=carla.Color(), life_time=-1.0, persistent_lines=True)</code></li>
+<li><code>draw_line(begin, end, thickness=0.1, color=carla.Color(), life_time=-1.0, persistent_lines=True)</code></li>
+<li><code>draw_arrow(begin, end, thickness=0.1, arrow_size=0.1, color=carla.Color(), life_time=-1.0, persistent_lines=True)</code></li>
+<li><code>draw_box(box, rotation, thickness=0.1, color=carla.Color(), life_time=-1.0, persistent_lines=True)</code></li>
+<li><code>draw_string(location, text, draw_shadow=False, color=carla.Color(), life_time=-1.0, persistent_lines=True)</code></li>
+</ul>
+<h2 id="carlablueprintlibrary"><code>carla.BlueprintLibrary</code></h2>
+<ul>
+<li><code>find(id)</code></li>
+<li><code>filter(wildcard_pattern)</code></li>
+<li><code>__getitem__(pos)</code></li>
+<li><code>__len__()</code></li>
+<li><code>__iter__()</code></li>
+</ul>
+<h2 id="carlaactorblueprint"><code>carla.ActorBlueprint</code></h2>
+<ul>
+<li><code>id</code></li>
+<li><code>tags</code></li>
+<li><code>has_tag(tag)</code></li>
+<li><code>match_tags(wildcard_pattern)</code></li>
+<li><code>has_attribute(key)</code></li>
+<li><code>get_attribute(key)</code></li>
+<li><code>set_attribute(key, value)</code></li>
+<li><code>__len__()</code></li>
+<li><code>__iter__()</code></li>
+</ul>
+<h2 id="carlaactorattribute"><code>carla.ActorAttribute</code></h2>
+<ul>
+<li><code>id</code></li>
+<li><code>type</code></li>
+<li><code>recommended_values</code></li>
+<li><code>is_modifiable</code></li>
+<li><code>as_bool()</code></li>
+<li><code>as_int()</code></li>
+<li><code>as_float()</code></li>
+<li><code>as_str()</code></li>
+<li><code>as_color()</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+<li><code>__nonzero__()</code></li>
+<li><code>__bool__()</code></li>
+<li><code>__int__()</code></li>
+<li><code>__float__()</code></li>
+<li><code>__str__()</code></li>
+</ul>
+<h2 id="carlaactorlist"><code>carla.ActorList</code></h2>
+<ul>
+<li><code>find(id)</code></li>
+<li><code>filter(wildcard_pattern)</code></li>
+<li><code>__getitem__(pos)</code></li>
+<li><code>__len__()</code></li>
+<li><code>__iter__()</code></li>
+</ul>
+<h2 id="carlaactor"><code>carla.Actor</code></h2>
+<ul>
+<li><code>id</code></li>
+<li><code>type_id</code></li>
+<li><code>parent</code></li>
+<li><code>semantic_tags</code></li>
+<li><code>is_alive</code></li>
+<li><code>attributes</code></li>
+<li><code>get_world()</code></li>
+<li><code>get_location()</code></li>
+<li><code>get_transform()</code></li>
+<li><code>get_velocity()</code></li>
+<li><code>get_angular_velocity()</code></li>
+<li><code>get_acceleration()</code></li>
+<li><code>set_location(location)</code></li>
+<li><code>set_transform(transform)</code></li>
+<li><code>set_velocity(vector)</code></li>
+<li><code>set_angular_velocity(vector)</code></li>
+<li><code>add_impulse(vector)</code></li>
+<li><code>set_simulate_physics(enabled=True)</code></li>
+<li><code>destroy()</code></li>
+<li><code>__str__()</code></li>
+</ul>
+<h2 id="carlavehiclecarlaactor"><code>carla.Vehicle(carla.Actor)</code></h2>
+<ul>
+<li><code>bounding_box</code></li>
+<li><code>apply_control(vehicle_control)</code></li>
+<li><code>get_control()</code></li>
+<li><code>get_physics_control()</code></li>
+<li><code>apply_physics_control(vehicle_physics_control)</code></li>
+<li><code>set_autopilot(enabled=True)</code></li>
+<li><code>get_speed_limit()</code></li>
+<li><code>get_traffic_light_state()</code></li>
+<li><code>is_at_traffic_light()</code></li>
+<li><code>get_traffic_light()</code></li>
+</ul>
+<h2 id="carlatrafficlightcarlaactor"><code>carla.TrafficLight(carla.Actor)</code></h2>
+<ul>
+<li><code>state</code></li>
+<li><code>set_state(traffic_light_state)</code></li>
+<li><code>get_state()</code></li>
+<li><code>set_green_time(green_time)</code></li>
+<li><code>get_green_time()</code></li>
+<li><code>set_yellow_time(yellow_time)</code></li>
+<li><code>get_yellow_time()</code></li>
+<li><code>set_red_time(red_time)</code></li>
+<li><code>get_red_time()</code></li>
+<li><code>get_elapsed_time()</code></li>
+<li><code>freeze(True)</code></li>
+<li><code>is_frozen()</code></li>
+<li><code>get_pole_index()</code></li>
+<li><code>get_group_traffic_lights()</code></li>
+</ul>
+<h2 id="carlasensorcarlaactor"><code>carla.Sensor(carla.Actor)</code></h2>
+<ul>
+<li><code>is_listening</code></li>
+<li><code>listen(callback_function)</code></li>
+<li><code>stop()</code></li>
+</ul>
+<h2 id="carlasensordata"><code>carla.SensorData</code></h2>
+<ul>
+<li><code>frame_number</code></li>
+<li><code>timestamp</code></li>
+<li><code>transform</code></li>
+</ul>
+<h2 id="carlaimagecarlasensordata"><code>carla.Image(carla.SensorData)</code></h2>
+<ul>
+<li><code>width</code></li>
+<li><code>height</code></li>
+<li><code>fov</code></li>
+<li><code>raw_data</code></li>
+<li><code>convert(color_converter)</code></li>
+<li><code>save_to_disk(path, color_converter=None)</code></li>
+<li><code>__len__()</code></li>
+<li><code>__iter__()</code></li>
+<li><code>__getitem__(pos)</code></li>
+<li><code>__setitem__(pos, color)</code></li>
+</ul>
+<h2 id="carlalidarmeasurementcarlasensordata"><code>carla.LidarMeasurement(carla.SensorData)</code></h2>
+<ul>
+<li><code>horizontal_angle</code></li>
+<li><code>channels</code></li>
+<li><code>raw_data</code></li>
+<li><code>get_point_count(channel)</code></li>
+<li><code>save_to_disk(path)</code></li>
+<li><code>__len__()</code></li>
+<li><code>__iter__()</code></li>
+<li><code>__getitem__(pos)</code></li>
+<li><code>__setitem__(pos, location)</code></li>
+</ul>
+<h2 id="carlacollisioneventcarlasensordata"><code>carla.CollisionEvent(carla.SensorData)</code></h2>
+<ul>
+<li><code>actor</code></li>
+<li><code>other_actor</code></li>
+<li><code>normal_impulse</code></li>
+</ul>
+<h2 id="carlalaneinvasioneventcarlasensordata"><code>carla.LaneInvasionEvent(carla.SensorData)</code></h2>
+<ul>
+<li><code>actor</code></li>
+<li><code>crossed_lane_markings</code></li>
+</ul>
+<h2 id="carlagnsseventcarlasensordata"><code>carla.GnssEvent(carla.SensorData)</code></h2>
+<ul>
+<li><code>latitude</code></li>
+<li><code>longitude</code></li>
+<li><code>altitude</code></li>
+</ul>
+<h2 id="carlaobstacledetectionsensoreventcarlasensordata"><code>carla.ObstacleDetectionSensorEvent(carla.SensorData)</code></h2>
+<ul>
+<li><code>actor</code></li>
+<li><code>other_actor</code></li>
+<li><code>distance</code></li>
+</ul>
+<h2 id="carlavehiclecontrol"><code>carla.VehicleControl</code></h2>
+<ul>
+<li><code>throttle</code></li>
+<li><code>steer</code></li>
+<li><code>brake</code></li>
+<li><code>hand_brake</code></li>
+<li><code>reverse</code></li>
+<li><code>gear</code></li>
+<li><code>manual_gear_shift</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlawheelsphysicscontrol"><code>carla.WheelsPhysicsControl</code></h2>
+<ul>
+<li><code>tire_friction</code></li>
+<li><code>damping_rate</code></li>
+<li><code>steer_angle</code></li>
+<li><code>disable_steering</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlavehiclephysicscontrol"><code>carla.VehiclePhysicsControl</code></h2>
+<ul>
+<li><code>torque_curve</code></li>
+<li><code>max_rpm</code></li>
+<li><code>moi</code></li>
+<li><code>damping_rate_full_throttle</code></li>
+<li><code>damping_rate_zero_throttle_clutch_engaged</code></li>
+<li><code>damping_rate_zero_throttle_clutch_disengaged</code></li>
+<li><code>use_gear_autobox</code></li>
+<li><code>gear_switch_time</code></li>
+<li><code>clutch_strength</code></li>
+<li><code>mass</code></li>
+<li><code>drag_coefficient</code></li>
+<li><code>center_of_mass</code></li>
+<li><code>steering_curve</code></li>
+<li><code>wheels</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlamap"><code>carla.Map</code></h2>
+<ul>
+<li><code>name</code></li>
+<li><code>get_spawn_points()</code></li>
+<li><code>get_waypoint(location, project_to_road=True, lane_type=carla.LaneType.Driving)</code></li>
+<li><code>get_topology()</code></li>
+<li><code>generate_waypoints(distance)</code></li>
+<li><code>transform_to_geolocation(location)</code></li>
+<li><code>to_opendrive()</code></li>
+<li><code>save_to_disk(path=self.name)</code></li>
+</ul>
+<h2 id="carlalanetype"><code>carla.LaneType</code></h2>
+<ul>
+<li><code>NONE</code></li>
+<li><code>Driving</code></li>
+<li><code>Stop</code></li>
+<li><code>Shoulder</code></li>
+<li><code>Biking</code></li>
+<li><code>Sidewalk</code></li>
+<li><code>Border</code></li>
+<li><code>Restricted</code></li>
+<li><code>Parking</code></li>
+<li><code>Bidirectional</code></li>
+<li><code>Median</code></li>
+<li><code>Special1</code></li>
+<li><code>Special2</code></li>
+<li><code>Special3</code></li>
+<li><code>RoadWorks</code></li>
+<li><code>Tram</code></li>
+<li><code>Rail</code></li>
+<li><code>Entry</code></li>
+<li><code>Exit</code></li>
+<li><code>OffRamp</code></li>
+<li><code>OnRamp</code></li>
+<li><code>Any</code></li>
+</ul>
+<h2 id="carlalanechange"><code>carla.LaneChange</code></h2>
+<ul>
+<li><code>NONE</code></li>
+<li><code>Right</code></li>
+<li><code>Left</code></li>
+<li><code>Both</code></li>
+</ul>
+<h2 id="carlalanemarkingcolor"><code>carla.LaneMarkingColor</code></h2>
+<ul>
+<li><code>Standard = White</code></li>
+<li><code>Blue</code></li>
+<li><code>Green</code></li>
+<li><code>Red</code></li>
+<li><code>White</code></li>
+<li><code>Yellow</code></li>
+<li><code>Other</code></li>
+</ul>
+<h2 id="carlalanemarkingtype"><code>carla.LaneMarkingType</code></h2>
+<ul>
+<li><code>NONE</code></li>
+<li><code>Other</code></li>
+<li><code>Broken</code></li>
+<li><code>Solid</code></li>
+<li><code>SolidSolid</code></li>
+<li><code>SolidBroken</code></li>
+<li><code>BrokenSolid</code></li>
+<li><code>BrokenBroken</code></li>
+<li><code>BottsDots</code></li>
+<li><code>Grass</code></li>
+<li><code>Curb</code></li>
+</ul>
+<h2 id="carlalanemarking"><code>carla.LaneMarking</code></h2>
+<ul>
+<li><code>type -&gt; carla.LaneMarking</code></li>
+<li><code>color -&gt; carla.RoadMarkColor</code></li>
+<li><code>lane_change -&gt; carla.LaneChange</code></li>
+<li><code>width</code></li>
+</ul>
+<h2 id="carlawaypoint"><code>carla.Waypoint</code></h2>
+<ul>
+<li><code>id</code></li>
+<li><code>transform</code></li>
+<li><code>is_intersection</code></li>
+<li><code>lane_width</code></li>
+<li><code>road_id</code></li>
+<li><code>section_id</code></li>
+<li><code>lane_id</code></li>
+<li><code>s</code></li>
+<li><code>lane_change -&gt; carla.LaneChange</code></li>
+<li><code>lane_type -&gt; carla.LaneType</code></li>
+<li><code>right_lane_marking -&gt; carla.LaneMarking</code></li>
+<li><code>left_lane_marking -&gt; carla.LaneMarking</code></li>
+<li><code>next(distance) -&gt; list(carla.Waypoint)</code></li>
+<li><code>get_right_lane() -&gt; carla.Waypoint</code></li>
+<li><code>get_left_lane() -&gt; carla.Waypoint</code></li>
+</ul>
+<h2 id="carlaweatherparameters"><code>carla.WeatherParameters</code></h2>
+<ul>
+<li><code>cloudyness</code></li>
+<li><code>precipitation</code></li>
+<li><code>precipitation_deposits</code></li>
+<li><code>wind_intensity</code></li>
+<li><code>sun_azimuth_angle</code></li>
+<li><code>sun_altitude_angle</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<p>Static presets</p>
+<ul>
+<li><code>carla.WeatherParameters.ClearNoon</code></li>
+<li><code>carla.WeatherParameters.CloudyNoon</code></li>
+<li><code>carla.WeatherParameters.WetNoon</code></li>
+<li><code>carla.WeatherParameters.WetCloudyNoon</code></li>
+<li><code>carla.WeatherParameters.MidRainyNoon</code></li>
+<li><code>carla.WeatherParameters.HardRainNoon</code></li>
+<li><code>carla.WeatherParameters.SoftRainNoon</code></li>
+<li><code>carla.WeatherParameters.ClearSunset</code></li>
+<li><code>carla.WeatherParameters.CloudySunset</code></li>
+<li><code>carla.WeatherParameters.WetSunset</code></li>
+<li><code>carla.WeatherParameters.WetCloudySunset</code></li>
+<li><code>carla.WeatherParameters.MidRainSunset</code></li>
+<li><code>carla.WeatherParameters.HardRainSunset</code></li>
+<li><code>carla.WeatherParameters.SoftRainSunset</code></li>
+</ul>
+<h2 id="carlavector2d"><code>carla.Vector2D</code></h2>
+<ul>
+<li><code>x</code></li>
+<li><code>y</code></li>
+<li><code>__add__(other)</code></li>
+<li><code>__sub__(other)</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlavector3d"><code>carla.Vector3D</code></h2>
+<ul>
+<li><code>x</code></li>
+<li><code>y</code></li>
+<li><code>z</code></li>
+<li><code>__add__(other)</code></li>
+<li><code>__sub__(other)</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlalocation"><code>carla.Location</code></h2>
+<ul>
+<li><code>x</code></li>
+<li><code>y</code></li>
+<li><code>z</code></li>
+<li><code>distance(other)</code></li>
+<li><code>__add__(other)</code></li>
+<li><code>__sub__(other)</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlageolocation"><code>carla.GeoLocation</code></h2>
+<ul>
+<li><code>latitude</code></li>
+<li><code>longitude</code></li>
+<li><code>altitude</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlarotation"><code>carla.Rotation</code></h2>
+<ul>
+<li><code>pitch</code></li>
+<li><code>yaw</code></li>
+<li><code>roll</code></li>
+<li><code>get_forward_vector()</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlatransform"><code>carla.Transform</code></h2>
+<ul>
+<li><code>location</code></li>
+<li><code>rotation</code></li>
+<li><code>transform(geom_object)</code></li>
+<li><code>get_forward_vector()</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlaboundingbox"><code>carla.BoundingBox</code></h2>
+<ul>
+<li><code>location</code></li>
+<li><code>extent</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlatimestamp"><code>carla.Timestamp</code></h2>
+<ul>
+<li><code>frame_count</code></li>
+<li><code>elapsed_seconds</code></li>
+<li><code>delta_seconds</code></li>
+<li><code>platform_timestamp</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlacolor"><code>carla.Color</code></h2>
+<ul>
+<li><code>r</code></li>
+<li><code>g</code></li>
+<li><code>b</code></li>
+<li><code>a</code></li>
+<li><code>__eq__(other)</code></li>
+<li><code>__ne__(other)</code></li>
+</ul>
+<h2 id="carlacolorconverter"><code>carla.ColorConverter</code></h2>
+<ul>
+<li><code>Raw</code></li>
+<li><code>Depth</code></li>
+<li><code>LogarithmicDepth</code></li>
+<li><code>CityScapesPalette</code></li>
+</ul>
+<h2 id="carlaactorattributetype"><code>carla.ActorAttributeType</code></h2>
+<ul>
+<li><code>Bool</code></li>
+<li><code>Int</code></li>
+<li><code>Float</code></li>
+<li><code>RGBColor</code></li>
+</ul>
+<h2 id="carlatrafficlightstate"><code>carla.TrafficLightState</code></h2>
+<ul>
+<li><code>Red</code></li>
+<li><code>Yellow</code></li>
+<li><code>Green</code></li>
+<li><code>Off</code></li>
+<li><code>Unknown</code></li>
+</ul>
+<h2 id="carlalanemarking_1"><code>carla.LaneMarking</code></h2>
+<ul>
+<li><code>Other</code></li>
+<li><code>Broken</code></li>
+<li><code>Solid</code></li>
+</ul>
+<h1 id="module-carlacommand">module <code>carla.command</code></h1>
+<p><code>carla.command.FutureActor</code> (not yet spawned actor handler)</p>
+<h2 id="carlacommandresponse"><code>carla.command.Response</code></h2>
+<ul>
+<li><code>actor_id</code></li>
+<li><code>error</code> -&gt; str|empty</li>
+<li><code>has_error()</code></li>
+</ul>
+<h2 id="carlacommandspawnactor"><code>carla.command.SpawnActor</code></h2>
+<ul>
+<li><code>__init__(blueprint, transform, parent=None)</code></li>
+<li><code>then(command)</code></li>
+</ul>
+<h2 id="carlacommanddestroyactor"><code>carla.command.DestroyActor</code></h2>
+<ul>
+<li><code>__init__(actor)</code></li>
+<li><code>actor_id</code></li>
+</ul>
+<h2 id="carlacommandapplyvehiclecontrol"><code>carla.command.ApplyVehicleControl</code></h2>
+<ul>
+<li><code>__init__(actor, control)</code></li>
+<li><code>actor_id</code></li>
+<li><code>control</code></li>
+</ul>
+<h2 id="carlacommandapplywalkercontrol"><code>carla.command.ApplyWalkerControl</code></h2>
+<ul>
+<li><code>__init__(actor, control)</code></li>
+<li><code>actor_id</code></li>
+<li><code>control</code></li>
+</ul>
+<h2 id="carlacommandapplytransform"><code>carla.command.ApplyTransform</code></h2>
+<ul>
+<li><code>__init__(actor, transform)</code></li>
+<li><code>actor_id</code></li>
+<li><code>transform</code></li>
+</ul>
+<h2 id="carlacommandapplyvelocity"><code>carla.command.ApplyVelocity</code></h2>
+<ul>
+<li><code>__init__(actor, velocity)</code></li>
+<li><code>actor_id</code></li>
+<li><code>velocity</code></li>
+</ul>
+<h2 id="carlacommandapplyangularvelocity"><code>carla.command.ApplyAngularVelocity</code></h2>
+<ul>
+<li><code>__init__(actor, angular_velocity)</code></li>
+<li><code>actor_id</code></li>
+<li><code>angular_velocity</code></li>
+</ul>
+<h2 id="carlacommandapplyimpulse"><code>carla.command.ApplyImpulse</code></h2>
+<ul>
+<li><code>__init__(actor, impulse)</code></li>
+<li><code>actor_id</code></li>
+<li><code>impulse</code></li>
+</ul>
+<h2 id="carlacommandsetsimulatephysics"><code>carla.command.SetSimulatePhysics</code></h2>
+<ul>
+<li><code>__init__(actor, bool)</code></li>
+<li><code>actor_id</code></li>
+<li><code>enabled</code></li>
+</ul>
+<h2 id="carlacommandsetautopilot"><code>carla.command.SetAutopilot</code></h2>
+<ul>
+<li><code>__init__(actor, bool)</code></li>
+<li><code>actor_id</code></li>
+<li><code>enabled</code></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cyber/" class="btn btn-neutral float-right" title="Home">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../carla_index/" class="btn btn-neutral" title="Carla index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../carla_index/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../cyber/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
