@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classcyber__py_1_1cyber_1_1ChannelUtils" kind="class" prot="public">
+    <compoundname>cyber_py::cyber::ChannelUtils</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcyber__py_1_1cyber_1_1ChannelUtils_1ac31f29d1c1054842d99d8a1020713911" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cyber_py.cyber.ChannelUtils.get_debugstring_rawmsgdata</definition>
+        <argsstring></argsstring>
+        <name>get_debugstring_rawmsgdata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse rawmsg from rawmsg data
+Input: message type; rawmsg data
+Output: a human readable form of this message.for debugging and other purposes.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" line="318" column="1" bodyfile="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" bodystart="318" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classcyber__py_1_1cyber_1_1ChannelUtils_1a3e50e3eb9c4d0f1d911f32c08e4dcc37" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cyber_py.cyber.ChannelUtils.get_msgtype</definition>
+        <argsstring></argsstring>
+        <name>get_msgtype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Parse rawmsg from rawmsg data
+Input: channel name, wait for topo discovery
+Output: the corresponding message type of this channel in topo.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" line="327" column="1" bodyfile="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" bodystart="327" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="classcyber__py_1_1cyber_1_1ChannelUtils_1ae979f78f8c5d19313181ef5b8fcf700d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cyber_py.cyber.ChannelUtils.get_channels</definition>
+        <argsstring></argsstring>
+        <name>get_channels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get active channels name
+Input: wait for topo discovery
+Output: all active channels
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" line="336" column="1" bodyfile="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" bodystart="336" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classcyber__py_1_1cyber_1_1ChannelUtils_1a5046d189a66add18c5c365db80b09914" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cyber_py.cyber.ChannelUtils.get_channels_info</definition>
+        <argsstring></argsstring>
+        <name>get_channels_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get active channel info
+Input: wait for topo discovery
+Output: {&apos;channel1&apos;:[], &apos;channel2&apos;:[]} .channels info
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" line="345" column="1" bodyfile="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" bodystart="345" bodyend="352"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="0">
+        <label>cyber_py.cyber.ChannelUtils</label>
+        <link refid="classcyber__py_1_1cyber_1_1ChannelUtils"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>cyber_py.cyber.ChannelUtils</label>
+        <link refid="classcyber__py_1_1cyber_1_1ChannelUtils"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" line="315" column="1" bodyfile="/home/work/apollo-fork/apollo/cyber/python/cyber_py/cyber.py" bodystart="315" bodyend="352"/>
+    <listofallmembers>
+      <member refid="classcyber__py_1_1cyber_1_1ChannelUtils_1ae979f78f8c5d19313181ef5b8fcf700d" prot="public" virt="non-virtual"><scope>cyber_py::cyber::ChannelUtils</scope><name>get_channels</name></member>
+      <member refid="classcyber__py_1_1cyber_1_1ChannelUtils_1a5046d189a66add18c5c365db80b09914" prot="public" virt="non-virtual"><scope>cyber_py::cyber::ChannelUtils</scope><name>get_channels_info</name></member>
+      <member refid="classcyber__py_1_1cyber_1_1ChannelUtils_1ac31f29d1c1054842d99d8a1020713911" prot="public" virt="non-virtual"><scope>cyber_py::cyber::ChannelUtils</scope><name>get_debugstring_rawmsgdata</name></member>
+      <member refid="classcyber__py_1_1cyber_1_1ChannelUtils_1a3e50e3eb9c4d0f1d911f32c08e4dcc37" prot="public" virt="non-virtual"><scope>cyber_py::cyber::ChannelUtils</scope><name>get_msgtype</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
