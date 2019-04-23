@@ -8,7 +8,7 @@ theme: readthedocs
 nav:
 - Home: 'index.md'
 - Quick start:
-  - 'Getting started': 'CyberRT_Quick_Start.md'
+  - '1Getting started': 'CyberRT_Quick_Start.md'
   - 'CyberRT Developer Tools': 'CyberRT_Developer_Tools.md'
   - 'CyberRT Terms': 'CyberRT_Terms.md'
   - 'F.A.Q.': 'CyberRT_FAQs.md'
