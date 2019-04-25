@@ -1,4 +1,4 @@
-PROJECT_NAME      = "myprj3"
+PROJECT_NAME      = "xtensor"
 XML_OUTPUT        = xml
 INPUT             =  ../cyber/xtensor
 GENERATE_LATEX    = NO

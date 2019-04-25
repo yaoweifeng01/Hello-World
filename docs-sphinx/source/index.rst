@@ -30,7 +30,7 @@ array expressions.
 
    api/expression_index
    api/container_index
-   api/function_index
+   api/node_index
    api/io_index
    api/xmath
 
