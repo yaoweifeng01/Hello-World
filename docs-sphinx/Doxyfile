@@ -1,6 +1,6 @@
 PROJECT_NAME      = "myprj3"
 XML_OUTPUT        = xml
-INPUT             =  ../cyber
+INPUT             =  ../cyber/xtensor
 GENERATE_LATEX    = NO
 GENERATE_MAN      = NO
 GENERATE_RTF      = NO
