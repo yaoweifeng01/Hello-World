@@ -7,12 +7,10 @@
 Readers and writers
 ====================
 
-Containers are in-memory expressions that share a common implementation of most of the methods of the xexpression API.
+Read && writers are in-memory expressions that share a common implementation of most of the methods of the xexpression API.
 The final container classes (``xarray``, ``xtensor``) mainly implement constructors and value semantic, most of the
 xexpression API is actually implemented in ``xstrided_container`` and ``xcontainer``.
 
 .. toctree::
 
-   xcontainer
-   xaccessible
    node

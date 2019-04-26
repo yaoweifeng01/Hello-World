@@ -28,11 +28,8 @@ array expressions.
    :caption: API REFERENCE
    :maxdepth: 2
 
-   api/expression_index
    api/container_index
    api/node_index
-   api/io_index
-   api/xmath
 
 .. _NumPy: http://www.numpy.org
 .. _Buffer Protocol: https://docs.python.org/3/c-api/buffer.html

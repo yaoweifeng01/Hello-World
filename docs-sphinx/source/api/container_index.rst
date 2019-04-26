@@ -14,18 +14,6 @@ xexpression API is actually implemented in ``xstrided_container`` and ``xcontain
 .. toctree::
 
    xcontainer
-   xaccessible
-   xiterable
-   xarray
-   xarray_adaptor
-   xtensor
-   xtensor_adaptor
-   xfixed
-   xoptional_assembly_base
-   xoptional_assembly
-   xoptional_assembly_adaptor
-   xmasked_view
-   xview
    xstrided_view
    xbroadcast
    xindex_view
